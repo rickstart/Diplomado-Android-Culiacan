@@ -66,8 +66,7 @@ public class PlayerFragment extends Fragment implements View.OnClickListener {
         txtName = (TextView) view.findViewById(R.id.txtName);
         txtName.setText(name);
         imgPlayer.setColorFilter(color);
-
-        imgPlayer.setOnClickListener(this);
+        imgBall.setOnClickListener(this);
         return view;
     }
 
@@ -80,12 +79,10 @@ public class PlayerFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        //if(imgBall.getVisibility() == View.VISIBLE){
-            chat.passBall(getRandomPosition(0,5));
-        //}
+        chat.passBall(getRandomPosition(0,5));
     }
 
-    public int getRandomPosition(int s, int e){
+    public static int getRandomPosition(int s, int e){
         Random r = new Random();
         int low = s;
         int high = e;
